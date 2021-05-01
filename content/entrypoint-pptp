@@ -29,7 +29,7 @@ if [ -w /etc/ppp/chap-secrets ]; then
 fi
 
 while read line; do
-  eval echo "$line"
+  eval "echo \"$line\""
 done < /etc/ppp/peers/pptp-provider.template > /etc/ppp/peers/pptp-provider
 
 VPN_ROUTING_IPS_VALIDATE=
@@ -52,7 +52,7 @@ while read line; do
   if [ "${line:0:1}" = '#' ]; then
     echo "$line"
   else
-    eval echo "${line//;/\;}"
+    eval "echo \"${line//;/\;}\""
   fi
 done < /etc/ppp/ip-up.template > /etc/ppp/ip-up
 chmod +x /etc/ppp/ip-up

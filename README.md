@@ -7,7 +7,7 @@ Run it in bash like this:
 
 ```Bash
 # print help message
-docker run --rm gzm55/vpn-client --help
+docker run --rm daominah/pptp_vpn_client --help
 
 # start a pptp tunnel
 VPN_ROUTING_IPS="172.0.0.0/8 www.google.com"
@@ -26,10 +26,10 @@ docker run --net=host \
 		END
            ) \
            --detach \
-           gzm55/vpn-client pptp <server-domain-or-ip> <user> [<pppd-options>]
+           daominah/pptp_vpn_client pptp <server-domain-or-ip> <user> [<pppd-options>]
 
 #view openconnect help
-docker run -it --rm gzm55/vpn-client openconect --help
+docker run -it --rm daominah/pptp_vpn_client openconect --help
 
 # start a openconnect tunnel
 
@@ -46,7 +46,7 @@ docker run --net=host \
 		END
            ) \
            --detach \
-           gzm55/vpn-client openconnect [<openconnect-options>] <server-domain-or-ip>
+           daominah/pptp_vpn_client openconnect [<openconnect-options>] <server-domain-or-ip>
 ```
 
 Accepted docker environment variables for vpn client:
